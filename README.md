@@ -1,118 +1,125 @@
-<p align="center">
-  <img width="auto" src="https://cms.count.ly/uploads/countly_github_56791635fe.png?updated_at=2023-04-05T09:56:43.491Z"/>
-</p>
+# gentelella
 
-![CI](https://github.com/countly/countly-server/actions/workflows/main.yml/badge.svg)
-![CodeQL Analysis](https://github.com/countly/countly-server/actions/workflows/codeql-analysis.yml/badge.svg)
+Gentelella Admin is a free to use Bootstrap admin template.
+This template uses the default Bootstrap 4 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.
 
-## 🔗 Quick links
+Theme uses several libraries for charts, calendar, form validation, wizard style interface, off-canvas navigation menu, text forms, date range, upload area, form autocomplete, range slider, progress bars, notifications and much more.
 
-* [Countly Website](https://countly.com)
-* [Countly Server installation guide](https://support.count.ly/hc/en-us/articles/360036862332-Installing-the-Countly-Server)
-* [Countly SDKs, download and documentation links](https://support.count.ly/hc/en-us/articles/360037236571-Downloading-and-Installing-SDKs)
-* [Countly Community on Discord](https://discord.gg/countly)
-* [User Guides for Countly features](https://support.count.ly/hc/en-us/sections/7039354168729-User-Guides-Countly-22-x)
+We would love to see how you use this awesome admin template. You can notify us about your site, app or service by tweeting to [@colorlib](https://twitter.com/colorlib). Once the list will grown long enough we will write a post similar to [this](https://colorlib.com/wp/avada-theme-examples/) to showcase the best examples.
 
-## 🌟 What is Countly?
 
-Countly is a product analytics platform that helps teams track, analyze and act on their user actions and behaviour on mobile, web and desktop applications. 
+## Theme Demo
+![Gentelella Bootstrap Admin Template](https://colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg 
+"Gentelella Theme Browser Preview")
 
-Countly is used to track 1.5B unique identities on more than 16,000 applications via 2,000+ servers worldwide. It securely processes billions of data points every day in the cloud and on-premises, enabling teams of all sizes to build better applications and engaging experiences while maintaining full control over their product analytics data flow.
+**[Template Demo](https://colorlib.com/polygon/gentelella/index.html)**
 
-## 🚀 What are the Countly editions?                   
+## Documentation
 
-* **Countly Lite** — Essential plugins/features and a free-to-use, open source, non-commercial license. Available as self-hosted. Suitable for individuals and small organizations.
-* **Countly Enterprise** — Offers a wider range of plugins/features, granular data, an SLA, and direct support. Available as self-hosted or Countly hosted/managed. Suitable for medium and large organizations.
-* **Countly Flex** — Our SaaS platform that offers some Enterprise features as core features, and some others as add-ons. Everyone gets their dedicated and fully-managed Countly server(s) in the region they choose. Suitable for individuals, small and medium-sized organizations.  
+**[Documentation](https://colorlibhq.github.io/gentelella/)**
 
-For a detailed comparison of different editions [please check here](https://countly.com/pricing). To try the Countly Flex [please visit this page]([https://countly.com/flex](https://countly.com/flex)).
+## Installation via Package Manager
 
-Also, please note that SDKs of Countly are the same for all editions.
+Our goal is to make it installable on different Package Manager! Do you want to use it on your favorite Package Manager and you know how? Pull request all the way! 
 
-## 📦 What is included in this repository?
+As of now, this is some installation available:
 
-This repository includes server-side part of Countly, with the following features: 
+**Bower**
 
-* Session, view and event collection and reporting
-* Crash/error reporting for iOS, Android, React Native, Flutter, NodeJS, Unity, Java and Javascript
-* Rich and interactive push notifications for iOS and Android
-* Remote configuration to adjust your app's logic, appearance, and behavior on the fly
-* In-app ratings with customizable widgets
-* Built in reports and customizable dashboards
-* Email reports and alerts
-* Hooks to send the data to external parties via email or webhooks
-* Data Manager to plan and manage events and event segmentations
-* Compliance Hub for consent collection and data subject request management
-* User, application and permission management
-* Read and write APIs
-* Plugin based architecture for easy customization
+```
+bower install gentelella --save
+```
 
-![content](https://count.ly/github/countly-highlights.png?v3)
+**npm**
 
-## 📈 What can Countly track?
+```
+npm install gentelella --save
+```
 
-Countly can collect and visualize data from mobile, web and desktop applications. Using the write-API you can send data into Countly from any source. For more information please check the below resources: 
+**yarn**
 
-* [List of Countly SDKs, documentation and download information](https://support.count.ly/hc/en-us/articles/360037236571-Downloading-and-Installing-SDKs)
-* [SDK development guide to build your own SDK](https://support.count.ly/hc/en-us/articles/360037753291-SDK-development-guide)
-* [Countly Server Write API to send data into Countly from any source](https://api.count.ly/reference/i)
+```
+yarn add gentelella
+```
+## How to contribute
+To contribute, please ensure that you have stable [Node.js](https://nodejs.org/) and [npm](https://npmjs.com) installed.
 
-## 🛠️ Installing and upgrading Countly server
+Test if Gulp CLI is installed by running `gulp --version`.  If the command isn't found, run `npm install -g gulp`.  For more information about installing Gulp, see the Gulp's [Getting Started](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
 
-Countly installation script assumes it is running on a fresh Ubuntu/CentOS/RHEL Linux without any services listening on port 80 or 443 (which should also be open to incoming traffic), and takes care of every library and software required to be installed for Countly to run.
+To have all gulp dependencies run ```npm install```
 
-There are several ways to install Countly:
+If `gulp` is installed, follow the steps below.
 
-1. The following command will download and install Countly on your **Ubuntu** or **CentOS** server.
+1. Fork and clone the repo.
+2. Run `gulp`, this will open gentelella on your default browser
+3. Now you can code, code and code!
+4. Submit a pull request
 
-   `wget -qO- https://c.ly/install | bash`
+## Gentelella for other platforms and frameworks
 
-2. For bash lovers, we provide a beautiful installation script (`bin/countly.install.sh`) in countly-server package which installs everything required to run Countly Server. For this, you need a stable release of this repository [available here](https://github.com/Countly/countly-server/releases).
+* [Gentelella on Ruby on Rails](https://github.com/iogbole/gentelella_on_rails) thanks to Israel Ogbole.
+* [Gentelella on Rails](https://github.com/mwlang/gentelella-rails) thanks to Michael Lang
+* [Gentelella on Smarty](https://github.com/microvb/otp-thing) with one time password generator, validator, and QR code generator that has no web dependencies (self-contained) in PHP thanks to MicroVB INC
+* [Gentelella integrated into Symfony 5](https://github.com/mamless/Gentella-admin-Symfony-5) full stack PHP framework thanks to  Mamour Wane.
+* [Gentelella on Yii framework](https://github.com/yiister/yii2-gentelella) with an asset bundle, a layout template and some widgets.
+* [Gentelella on Angular](https://github.com/kmkatsma/angular2-webpack-starter-gentelella) Angular Webpack Starter modified to utilize the Gentelella.
+* [Gentelella on Aurelia](https://github.com/kmkatsma/aurelia-gentelella) Typescript webpack skeleton modified to utilize the Gentelella.
+* [Gentelella on Laravel](https://github.com/Labs64/laravel-boilerplate) PHP / Laravel 5 boilerplate project with Gentelella Admin theme support.
+* [Gentelella on Django](https://github.com/GiriB/django-gentelella) Gentelella modified to fit as a Django app
+* [Gentelella on Flask](https://github.com/afourmy/flask-gentelella) Gentelella modified to fit as a Flask app
+* [Gentelella on CakePHP](https://github.com/backstageel/cakephp-gentelella-theme) Gentelella modified to work on CakePHP
+* [Gentelella right to left](https://github.com/mortezakarimi/gentelella-rtl) Gentelella modified to work with right to left languages like Persian
+* [Gentelella-rtl on Yii framework](https://github.com/mortezakarimi/yii2-gentelella-rtl) with an asset bundle, a layout template and some widgets. inspired from [Gentelella on Yii framework](https://github.com/yiister/yii2-gentelella)
+* [Gentelella by React](https://github.com/thomaslwq/react-admin) Gentelella realized by React
 
-3. Countly Lite also has Docker support - [see our official Docker repository](https://registry.hub.docker.com/r/countly/countly-server/) and [installation instructions for Docker](https://support.count.ly/hc/en-us/articles/360036862332-Installing-the-Countly-Server).
+Let us know if you have done integration for this admin template on other platforms and frameworks and we'll be happy to share your work.
 
-If you want to upgrade Countly from a previous version, please take a look at [upgrading documentation](https://support.count.ly/hc/en-us/articles/360037443652-Upgrading-the-Countly-Server).
+## Scripts included:
+* Bootstrap
+* Font Awesome
+* jQuery-Autocomplete
+* FullCalendar
+* Charts.js
+* Bootstrap Colorpicker
+* Cropper
+* dataTables
+* Date Range Picker for Bootstrap
+* Dropzone
+* easyPieChart
+* ECharts
+* bootstrap-wysiwyg
+* Flot - Javascript plotting library for jQuery.
+* gauge.js
+* iCheck
+* jquery.inputmask plugin
+* Ion.RangeSlider
+* jQuery
+* jVectorMap
+* moment.js
+* Morris.js - pretty time-series line graphs
+* PNotify - Awesome JavaScript notifications
+* NProgress
+* Pace
+* Parsley
+* bootstrap-progressbar
+* select2
+* Sidebar Transitions - simple off-canvas navigations
+* Skycons - canvas based wather icons
+* jQuery Sparklines plugin
+* switchery - Turns HTML checkbox inputs into beautiful iOS style switches
+* jQuery Tags Input Plugin
+* Autosize - resizes text area to fit text
+* validator - HTML from validator using jQuery
+* jQuery Smart Wizard
 
-## 🧩 API, extensibility and plugins
+## Other templates and useful resources
+* [Free Bootstrap Admin Templates](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/ "Bootstrap Admin Templates on Colorlib") - List of the best Free Bootstrap admin dashboard templates that are available for free for personal and commercial use.
+* [Free Admin Templates](https://colorlib.com/wp/free-html5-admin-dashboard-templates/ "List of free HTML based admin templates by Colorlib") - Long list of the best free HTML5 powered admin dashboard templates. Available for personal and commercial use.
+* [Angular Templates](https://colorlib.com/wp/angularjs-admin-templates/ "Angular Admin Templates on Colorlib") - List of the most popular admin templates based on AngularJS.
+* [WordPress Admin Templates](https://colorlib.com/wp/wordpress-admin-dashboard-themes-plugins/ "List of WordPress Admin Dashboard Templates and Plugins by Colorlib") - List of the best WordPress admin dashboard templates and plugins that will add a personal touch to your WordPress dashboard.
+* [WordPress Themes](https://colorlib.com/wp/free-wordpress-themes/ "List of Free WordPress themes by Colorlib") - A huge selection of the best free WordPress themes that are all licensed under GPL and are available for personal and commercial use without restrictions.
 
-Countly has a [well-defined API](https://api.count.ly), that reads and writes data from/to the Countly backend. Countly dashboard is built using the read API, so it's possible to fetch any information you see on the dashboard using the API.
+## License information
+Gentelella is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. But you always need to state that Colorlib is the original author of this template.
 
-Countly is extensible using the plugin architecture. If you would like to modify any exiting feature by extending it or changing it, or if you would like to add completely new capabilities to Countly you can modify existing plugins or create new ones. We suggest [you read this document](https://support.count.ly/hc/en-us/articles/360036862392-Introduction) if you would like to start with plugin development.
-
-## 💚 Community
-
-We have a new Discord Server (new as of Apr 2023) for our community 🎉 [Please join us](https://discord.gg/countly) for any support requests, feature ideas, to showcase the application you are working on and for some occasional fun :)
-
-## 🔒 Security
-
-Security is very important to us. If you discover any issue regarding security, please disclose the information responsibly by sending an email to security@count.ly and **not by creating a GitHub issue**.
-
-## 🏗️ Built with
-
-* **MongoDB** — One of the most popular NoSQL databases
-* **NodeJS** — An open-source, cross-platform JavaScript runtime environment
-* **Linux** — What we all love using ;-)
-
-Plus lots of [open source libraries](https://support.count.ly/hc/en-us/articles/360037092232-Open-source-components)!         
-
-## 🤝 How can I help you with your efforts?
-
-1. Fork this repo
-2. Create your feature branch (`git checkout -b my-new-super-feature`)
-3. Commit your changes (`git commit -am 'Add some cool feature'`)
-4. Push to the branch (`git push origin my-new-super-feature`)
-5. Create a new pull request
-
-Also, you are encouraged to read an extended contribution section on [how to contribute to Countly](https://github.com/Countly/countly-server/blob/master/CONTRIBUTING.md).
-
-## 👍 Badges
-
-If you like Countly, why not use one of our badges and give a link back to us?
-
-<a href="https://countly.com/?utm_source=badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/dark.svg?v2" alt="Countly - Product Analytics" /></a>
-
-    <a href="https://countly.com/?utm_source=badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/dark.svg" alt="Countly - Product Analytics" /></a>
-
-<a href="https://countly.com/?utm_source=badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/light.svg?v2" alt="Countly - Product Analytics" /></a>
-
-    <a href="https://countly.com/?utm_source=badge" rel="nofollow"><img style="width:145px;height:60px" src="https://count.ly/badges/light.svg" alt="Countly - Product Analytics" /></a>
+Project is developed and maintained by [Colorlib](https://colorlib.com/ "Colorlib - Make Your First Blog") and Aigars Silkalns
