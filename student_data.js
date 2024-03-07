@@ -88,27 +88,17 @@ $("#accordion").accordion({
 // Extracts dates and scores data from the provided HTML table.
 function extractDataFromTable() {
     const tableRows = document.querySelectorAll("table tbody tr");
-    let data = [];
+    let dates = [], scores = [];
 
-    tableRows.forEach((row) => {
-        const dateCell = row.querySelector("td:first-child");
-        const date = dateCell ? dateCell.textContent.trim() : "";
-
-        const scoreCells = row.querySelectorAll("td:not(:first-child):not(:last-child)");
-        const rowScores = Array.from(scoreCells, cell => parseInt(cell.textContent || '0', 10));
-
-        data.push({ date, scores: rowScores });
+    tableRows.forEach(row => {
+        const cells = Array.from(row.querySelectorAll("td"));
+        dates.push(cells[0].textContent.trim());
+        scores.push(cells.slice(1, -1).map(cell => parseInt(cell.textContent || '0', 10)));
     });
-
-    // Sort the data by date in ascending order
-    data.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    // Extract dates and scores into separate arrays
-    const dates = data.map(item => item.date);
-    const scores = data.map(item => item.scores);
 
     return { dates, scores };
 }
+
 
 // Populates the series data based on selected columns, header map, and scores.
 function populateSeriesData(selectedColumns, headerMap, scores) {
