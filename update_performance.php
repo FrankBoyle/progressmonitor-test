@@ -3,79 +3,68 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('./users/db.php');  
+require_once('./users/db.php');  
 header('Content-Type: application/json');
 
-// Main logic
-if (isset($_POST['performance_id'], $_POST['field_name'], $_POST['new_value'])) {
-    $performanceId = $_POST['performance_id'];
-    $fieldName = $_POST['field_name'];
-    $newValue = $_POST['new_value'];
-    $studentId = $_POST['student_id'] ?? null;
-    $metadata_id = $_POST['metadata_id'];
-    if (in_array($fieldName, ['score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'])) {
-        if ($newValue === '' || !isset($newValue)) {
-            $newValue = NULL;
-        }
-    }
+// Validate and sanitize input before using
+$performanceId = filter_input(INPUT_POST, 'performance_id', FILTER_SANITIZE_NUMBER_INT);
+$fieldName = filter_input(INPUT_POST, 'field_name', FILTER_SANITIZE_STRING);
+$newValue = filter_input(INPUT_POST, 'new_value', FILTER_DEFAULT); // Use specific filter as needed
+$studentId = filter_input(INPUT_POST, 'student_id', FILTER_SANITIZE_NUMBER_INT);
+$metadata_id = filter_input(INPUT_POST, 'metadata_id', FILTER_SANITIZE_NUMBER_INT);
 
-    if ($fieldName === 'score_date') {
-        $checkStmt = $connection->prepare("
-        SELECT COUNT(*) 
-        FROM Performance 
-        WHERE 
-            student_id = ? AND 
-            score_date = ? AND 
-            metadata_id = ? AND 
-            performance_id != ?
-    ");
-
-        if($metadata_id !== null) {
-            $checkStmt->execute([$studentId, $newValue, $metadata_id, $performanceId]);  
-        } else {
-            handleError("Metadata ID is missing!");  
-            return;
-        }
-        
-        $newDate = date_create_from_format('Y-m-d', $newValue);
-        if (!$newDate) {
-            handleError("Invalid date format received. Expected 'Y-m-d' format but received: " . $newValue);
-            return;
-        }
-        $newValue = date_format($newDate, 'Y-m-d');
-    }
-
-    updatePerformance($connection, $performanceId, $fieldName, $newValue);  
-} else {
-    handleError("Invalid data provided.");
+if (!$performanceId || !$fieldName) {
+    handleError("Invalid or missing data provided.");
+    exit;
 }
 
-function updatePerformance($connection, $performanceId, $fieldName, $newValue) {
-    $allowedFields = ['score_date', 'score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
+// Ensure the field is allowed to be updated
+$allowedFields = ['score_date', 'score1', 'score2', 'score3', 'score4', 'score5', 'score6', 'score7', 'score8', 'score9', 'score10'];
+if (!in_array($fieldName, $allowedFields)) {
+    handleError("Invalid field specified.");
+    exit;
+}
 
-    if (!in_array($fieldName, $allowedFields)) {
-        handleError("Invalid field specified.");
-        return;
+if ($fieldName === 'score_date') {
+    // Validate the date format before proceeding
+    $d = DateTime::createFromFormat('Y-m-d', $newValue);
+    if (!$d || $d->format('Y-m-d') !== $newValue) {
+        handleError("Invalid date format. Expected 'Y-m-d'.");
+        exit;
     }
+    
+    // Check for duplicate dates
+    $stmt = $connection->prepare("
+        SELECT COUNT(*) 
+        FROM Performance 
+        WHERE student_id = ? AND score_date = ? AND metadata_id = ? AND performance_id != ?
+    ");
+    $stmt->execute([$studentId, $newValue, $metadata_id, $performanceId]);
+    $count = $stmt->fetchColumn();
+    
+    if ($count > 0) {
+        handleError("Duplicate date not allowed.");
+        exit;
+    }
+}
 
-    // Prepare SQL statement
+// Proceed with the update if no duplicates and data is valid
+updatePerformance($connection, $performanceId, $fieldName, $newValue);
+
+function updatePerformance($connection, $performanceId, $fieldName, $newValue) {
     $sql = "UPDATE `Performance` SET `$fieldName` = ? WHERE `performance_id` = ?";
     $stmt = $connection->prepare($sql);
-    $stmt->bindParam(1, $newValue);
-    $stmt->bindParam(2, $performanceId);
 
-    // Execute and respond
-    if ($stmt->execute()) {
+    if ($stmt->execute([$newValue, $performanceId])) {
         sendResponse(["success" => true]);
     } else {
-        handleError("Database error: " . $stmt->errorInfo()[2]);
+        handleError("Database error: " . implode(", ", $stmt->errorInfo()));
     }
 }
 
 function handleError($errorMessage) {
     sendResponse(["success" => false, "error" => $errorMessage]);
 }
-
 
 function sendResponse($response) {
     echo json_encode($response);
