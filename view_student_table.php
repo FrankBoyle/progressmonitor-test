@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Performance Data Display</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
     <style>
         body {
@@ -26,17 +27,24 @@
     </div>
 
     <script type="text/javascript">
-        // Mock-up data
-        var performanceData = [
-            {score_date: '2021-01-01', score1: '85', score2: '90'},
-            {score_date: '2021-02-01', score1: '88', score2: '91'},
-            // Add your actual data here
-        ];
-        var scoreNames = ['Score 1', 'Score 2']; // Adjust based on your actual score names
-
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeHandsontable(performanceData, scoreNames);
+        $(document).ready(function() {
+            fetchPerformanceData();
         });
+
+        function fetchPerformanceData() {
+            $.ajax({
+                url: './users/fetch_data.php', // Your PHP endpoint
+                type: 'GET', // or 'POST', as required by your PHP endpoint
+                dataType: 'json',
+                success: function(response) {
+                    // Assuming response contains performanceData and scoreNames
+                    initializeHandsontable(response.performanceData, response.scoreNames);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching data:", error);
+                }
+            });
+        }
 
         function initializeHandsontable(performanceData, scoreNames) {
             const dataForHandsonTable = performanceData.map(item => {
