@@ -33,7 +33,7 @@
 
         function fetchPerformanceData() {
             $.ajax({
-                url: './users/fetch_data.php', // Your PHP endpoint
+                url: '/users/fetch_data.php', // Your PHP endpoint
                 type: 'GET', // or 'POST', as required by your PHP endpoint
                 dataType: 'json',
                 success: function(response) {
