@@ -32,13 +32,13 @@ if (isset($_GET['metadata_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>W2UI Table Example</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.css">
 </head>
 <body>
 
 <div id="grid" style="width: 100%; height: 400px;"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
+<script src="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
 <script>
     // Get the metadata_id from the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
