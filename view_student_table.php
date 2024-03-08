@@ -22,7 +22,7 @@ function fetchData() {
     console.log(studentId, metadataId);
 
     // Construct the API endpoint with the parameters
-    const apiUrl = `./users/fetch_data.php?student_id=${studentId}&metadata_id=${metadataId}`;
+    const apiUrl = `./users/fetch_data.php`;
     
     // Fetch data from your PHP backend using the constructed URL
     fetch(apiUrl)
