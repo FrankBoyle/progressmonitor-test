@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>W2UI Table Example</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
+
 </head>
 <body>
 
 <div id="grid" style="width: 100%; height: 400px;"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
 <script>
 // Function to fetch data based on URL parameters
 function fetchData() {
