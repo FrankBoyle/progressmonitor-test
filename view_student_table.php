@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>W2UI Table Example</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
-
 </head>
 <body>
 
 <div id="grid" style="width: 100%; height: 400px;"></div>
 
+<script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
 <script>
 // Function to fetch data based on URL parameters
 function fetchData() {
@@ -18,12 +17,12 @@ function fetchData() {
     const currentUrl = new URL(window.location.href);
     
     // Extract parameters from URL
-    const studentId = currentUrl.searchParams.get('student_id');
-    const metadataId = currentUrl.searchParams.get('metadata_id');
+    const student_id = currentUrl.searchParams.get('student_id');
+    const metadata_id = currentUrl.searchParams.get('metadata_id');
     console.log(studentId, metadataId);
 
     // Construct the API endpoint with the parameters
-    const apiUrl = `./users/fetch_data.php`;
+    const apiUrl = `./users/fetch_data.php?student_id=${student_id}&metadata_id=${metadata_id}`;
     
     // Fetch data from your PHP backend using the constructed URL
     fetch(apiUrl)
