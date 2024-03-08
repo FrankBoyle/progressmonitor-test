@@ -47,27 +47,7 @@ if (isset($_GET['metadata_id'])) {
     </script>
 <script>
 // Function to fetch data based on URL parameters
-function fetchData() {
-    // Get the current URL
-    const currentUrl = new URL(window.location.href);
-    
-    // Extract parameters from URL
-    const student_id = currentUrl.searchParams.get('student_id');
-    const metadata_id = currentUrl.searchParams.get('metadata_id');
-    console.log(student_id, metadata_id);
 
-    // Construct the API endpoint with the parameters
-    const apiUrl = `./users/fetch_data.php`;
-    
-    // Fetch data from your PHP backend using the constructed URL
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Assuming your data is an array of objects
-            initGrid(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}
 
 // Initialize W2UI Grid with fetched data (function remains the same)
 function initGrid(data) {
