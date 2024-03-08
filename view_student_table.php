@@ -19,6 +19,7 @@ function fetchData() {
     // Extract parameters from URL
     const studentId = currentUrl.searchParams.get('student_id');
     const metadataId = currentUrl.searchParams.get('metadata_id');
+    console.log(studentId, metadataId);
 
     // Construct the API endpoint with the parameters
     const apiUrl = `./users/fetch_data.php?student_id=${studentId}&metadata_id=${metadataId}`;
