@@ -1,3 +1,32 @@
+<?php
+include ('./users/fetch_data.php');
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+foreach ($students as $student) {
+    if ($student['student_id'] == $studentId) { // If the IDs match
+        $studentName = $student['name']; // Get the student name
+        break;
+    }
+}
+
+if (isset($_GET['metadata_id'])) {
+    $selectedMetadataId = $_GET['metadata_id'];
+
+    // Now fetch the corresponding category name based on this metadata_id
+    foreach ($metadataEntries as $metadataEntry) {
+        if ($metadataEntry['metadata_id'] == $selectedMetadataId) {
+            $selectedCategoryName = $metadataEntry['category_name'];
+            break; // We found our category, no need to continue the loop
+        }
+    }
+} else {
+    // Optional: Handle cases where no metadata_id is specified, if needed
+    // $selectedCategoryName = "Default Category or message"; // for example
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
