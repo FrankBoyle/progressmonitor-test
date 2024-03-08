@@ -46,20 +46,30 @@ if (isset($_GET['metadata_id'])) {
     var scoreNamesFromPHP = <?php echo json_encode($scoreNames); ?>;
     </script>
 <script>
-// Function to fetch data based on URL parameters
-
-
-// Initialize W2UI Grid with fetched data (function remains the same)
 function initGrid(data) {
-    // Code for initializing the grid goes here
+    // Convert your PHP data to a format suitable for W2UI grid
+    const records = data.Behavior.map((name, index) => ({
+        recid: index + 1, // W2UI requires a unique 'recid' for each row
+        scoreName: name
+    }));
+
+    $('#grid').w2grid({
+        name: 'scoreGrid',
+        show: {
+            toolbar: true,
+            footer: true,
+            header: 'Behavior Scores'
+        },
+        columns: [
+            { field: 'recid', caption: 'ID', size: '50px', sortable: true, attr: 'align=center' },
+            { field: 'scoreName', caption: 'Score Name', size: '100%', sortable: true }
+        ],
+        records: records
+    });
 }
 
-// Call fetchData on page load to populate the grid
-document.addEventListener('DOMContentLoaded', () => {
-    // Assuming scoreNamesFromPHP is structured correctly for your grid
-    // You may need to adjust the data format depending on your specific requirements
-    initGrid(scoreNamesFromPHP);
-});
+// Call initGrid on page load to populate the grid
+document.addEventListener('DOMContentLoaded', () => initGrid(scoreNamesFromPHP));
 
 </script>
 
