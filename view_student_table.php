@@ -55,7 +55,12 @@ function initGrid(data) {
 }
 
 // Call fetchData on page load to populate the grid
-document.addEventListener('DOMContentLoaded', fetchData);
+document.addEventListener('DOMContentLoaded', () => {
+    // Assuming scoreNamesFromPHP is structured correctly for your grid
+    // You may need to adjust the data format depending on your specific requirements
+    initGrid(scoreNamesFromPHP);
+});
+
 </script>
 
 </body>
