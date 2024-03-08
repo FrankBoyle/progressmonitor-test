@@ -37,6 +37,7 @@ if (isset($_GET['metadata_id'])) {
 <body>
 
 <div id="grid" style="width: 100%; height: 400px;"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="https://rawgit.com/vitmalina/w2ui/master/dist/w2ui.min.js"></script>
 <script>
