@@ -40,6 +40,12 @@ if (isset($_GET['metadata_id'])) {
 
 <script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
 <script>
+    // Get the metadata_id from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const metadata_id = urlParams.get('metadata_id');
+    var scoreNamesFromPHP = <?php echo json_encode($scoreNames); ?>;
+    </script>
+<script>
 // Function to fetch data based on URL parameters
 function fetchData() {
     // Get the current URL
