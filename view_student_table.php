@@ -21,7 +21,7 @@ function fetchData() {
     const metadataId = currentUrl.searchParams.get('metadata_id');
 
     // Construct the API endpoint with the parameters
-    const apiUrl = `/path/to/your/php/file?student_id=${studentId}&metadata_id=${metadataId}`;
+    const apiUrl = `/users/fetch_data.php?student_id=${studentId}&metadata_id=${metadataId}`;
     
     // Fetch data from your PHP backend using the constructed URL
     fetch(apiUrl)
