@@ -2,82 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Performance Data Display</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-        #dataTable {
-            margin-top: 20px;
-        }
-    </style>
+    <title>W2UI Table Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.css" />
 </head>
 <body>
-    <div class="container">
-        <h2>Performance Data</h2>
-        <div id="dataTable"></div>
-    </div>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            fetchPerformanceData();
-        });
+<div id="grid" style="width: 100%; height: 400px;"></div>
 
-        function fetchPerformanceData() {
-            $.ajax({
-                url: '/users/fetch_data.php', // Your PHP endpoint
-                type: 'GET', // or 'POST', as required by your PHP endpoint
-                dataType: 'json',
-                success: function(response) {
-                    // Assuming response contains performanceData and scoreNames
-                    initializeHandsontable(response.performanceData, response.scoreNames);
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error fetching data:", error);
-                }
-            });
-        }
+<script src="https://cdn.jsdelivr.net/npm/w2ui@1.5/dist/w2ui.min.js"></script>
+<script>
+// Function to fetch data based on URL parameters
+function fetchData() {
+    // Get the current URL
+    const currentUrl = new URL(window.location.href);
+    
+    // Extract parameters from URL
+    const studentId = currentUrl.searchParams.get('student_id');
+    const metadataId = currentUrl.searchParams.get('metadata_id');
 
-        function initializeHandsontable(performanceData, scoreNames) {
-            const dataForHandsonTable = performanceData.map(item => {
-                const rowData = {};
-                rowData['Date'] = item.score_date;
-                scoreNames.forEach((name, index) => {
-                    rowData[name] = item['score' + (index + 1)];
-                });
-                return rowData;
-            });
+    // Construct the API endpoint with the parameters
+    const apiUrl = `/path/to/your/php/file?student_id=${studentId}&metadata_id=${metadataId}`;
+    
+    // Fetch data from your PHP backend using the constructed URL
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Assuming your data is an array of objects
+            initGrid(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
 
-            const columns = [{data: 'Date', type: 'date', dateFormat: 'MM/DD/YYYY'}];
-            scoreNames.forEach(name => {
-                columns.push({data: name, type: 'text'});
-            });
+// Initialize W2UI Grid with fetched data (function remains the same)
+function initGrid(data) {
+    // Code for initializing the grid goes here
+}
 
-            const container = document.getElementById('dataTable');
-            const hot = new Handsontable(container, {
-                data: dataForHandsonTable,
-                columns: columns,
-                colHeaders: ['Date', ...scoreNames],
-                rowHeaders: true,
-                stretchH: 'all',
-                width: '100%',
-                height: 'auto',
-                columnSorting: true,
-                contextMenu: true,
-                manualRowMove: true,
-                manualColumnMove: true,
-                filters: true,
-                dropdownMenu: true,
-            });
-        }
-    </script>
+// Call fetchData on page load to populate the grid
+document.addEventListener('DOMContentLoaded', fetchData);
+</script>
+
 </body>
 </html>
