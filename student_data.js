@@ -44,40 +44,38 @@ const barChartSeriesColors = [
     '#C21807'   // deep red
 ];
 
-// Initialization
 $(document).ready(function() {
-    initializeChart();  // Initialize line chart
-    initializeBarChart();  // Initialize bar chart
+    // Removed the direct initialization calls from here to prevent immediate loading
 });
 
-// Inside your accordion activation function
 $("#accordion").accordion({
     collapsible: true,
     heightStyle: "content",
     active: false,
     activate: function(event, ui) {
+        // Check if the new panel contains the line chart
         if (ui.newPanel.has('#chart').length) {
             selectedChartType = 'line';
-            //console.log("Line Graph activated");
-
-            // Update the selected columns based on the current state of the checkboxes
-            selectedColumns = Array.from(document.querySelectorAll("#columnSelector input:checked"))
-                .map(checkbox => checkbox.getAttribute("data-column-name") || '');
-
-            if (!chart) {
-                initializeChart();
+            
+            // Initialize or update the line chart when the section is opened
+            if (typeof chart === 'undefined' || chart === null) {
+                initializeChart(); // Call this function only if the chart is not already initialized
             } else {
-                // Update the line chart with the selected columns
-                updateChart(selectedColumns); // Assuming updateChart is the function to update the line chart
+                // Update the line chart with the selected columns if the chart is already initialized
+                selectedColumns = Array.from(document.querySelectorAll("#columnSelector input:checked"))
+                    .map(checkbox => checkbox.getAttribute("data-column-name") || '');
+                updateChart(selectedColumns);
             }
-        } else if (ui.newPanel.has('#barChart').length) {
+        } 
+        // Check if the new panel contains the bar chart
+        else if (ui.newPanel.has('#barChart').length) {
             selectedChartType = 'bar';
-            //console.log("Bar Graph activated");
-
-            if (barChart === null) {
-                initializeBarChart(); // Initialize the bar chart
+            
+            // Initialize or update the bar chart when the section is opened
+            if (typeof barChart === 'undefined' || barChart === null) {
+                initializeBarChart(); // Call this function only if the barChart is not already initialized
             } else {
-                // Update the bar chart with the selected columns
+                // Update the bar chart with the selected columns if the chart is already initialized
                 selectedColumns = Array.from(document.querySelectorAll("#columnSelector input:checked"))
                     .map(checkbox => checkbox.getAttribute("data-column-name") || '');
                 updateBarChart(selectedColumns);
@@ -86,30 +84,21 @@ $("#accordion").accordion({
     }
 });
 
+
 // Extracts dates and scores data from the provided HTML table.
 function extractDataFromTable() {
     const tableRows = document.querySelectorAll("table tbody tr");
-    let data = [];
+    let dates = [], scores = [];
 
-    tableRows.forEach((row) => {
-        const dateCell = row.querySelector("td:first-child");
-        const date = dateCell ? dateCell.textContent.trim() : "";
-
-        const scoreCells = row.querySelectorAll("td:not(:first-child):not(:last-child)");
-        const rowScores = Array.from(scoreCells, cell => parseInt(cell.textContent || '0', 10));
-
-        data.push({ date, scores: rowScores });
+    tableRows.forEach(row => {
+        const cells = Array.from(row.querySelectorAll("td"));
+        dates.push(cells[0].textContent.trim());
+        scores.push(cells.slice(1, -1).map(cell => parseInt(cell.textContent || '0', 10)));
     });
-
-    // Sort the data by date in ascending order
-    data.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    // Extract dates and scores into separate arrays
-    const dates = data.map(item => item.date);
-    const scores = data.map(item => item.scores);
 
     return { dates, scores };
 }
+
 
 // Populates the series data based on selected columns, header map, and scores.
 function populateSeriesData(selectedColumns, headerMap, scores) {
@@ -275,10 +264,6 @@ function debounce(func, wait) {
     };
 }
 
-var dataSeries = [
-    //... Your series data ...
-];
-
 // Create the data labels settings
 var dataLabelsSettings = {
     enabled: true,
@@ -397,6 +382,8 @@ function getTrendlineData(seriesData) {
 }
 
 ////////////////////////////////////////////////
+////////////////////////////////////////////////
+
 function generateStackedBarChartData(scores, headerNames, customNames = []) {
     const seriesList = [];
 
