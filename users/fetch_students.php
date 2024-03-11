@@ -117,7 +117,7 @@ function fetchAllRelevantGroups($teacherId) {
     $stmt = $connection->prepare("
         SELECT g.*, (g.group_id = t.default_group_id) AS is_default 
         FROM 'Groups' g
-        LEFT JOIN Teachers t ON t.teacher_id = :teacherId
+        LEFT JOIN 'Teachers' t ON t.teacher_id = :teacherId
         WHERE g.teacher_id = :teacherId
         UNION
         SELECT g.*, (g.group_id = t.default_group_id) AS is_default
