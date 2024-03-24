@@ -115,16 +115,17 @@ function fetchAllRelevantGroups($teacherId) {
     // This query selects both groups owned by the teacher and groups shared with the teacher
     // and also checks if the group is the default group for the teacher
     $stmt = $connection->prepare("
-        SELECT g.*, (g.group_id = t.default_group_id) AS is_default 
-        FROM Groups g
-        LEFT JOIN Teachers t ON t.teacher_id = :teacherId
-        WHERE g.teacher_id = :teacherId
-        UNION
-        SELECT g.*, (g.group_id = t.default_group_id) AS is_default
-        FROM Groups g
-        INNER JOIN SharedGroups sg ON g.group_id = sg.group_id
-        LEFT JOIN Teachers t ON t.teacher_id = :teacherId
-        WHERE sg.shared_teacher_id = :teacherId
+    SELECT g.*, (g.group_id = t.default_group_id) AS is_default 
+    FROM `Groups` g
+    LEFT JOIN Teachers t ON t.teacher_id = :teacherId
+    WHERE g.teacher_id = :teacherId
+    UNION
+    SELECT g.*, (g.group_id = t.default_group_id) AS is_default
+    FROM `Groups` g
+    INNER JOIN SharedGroups sg ON g.group_id = sg.group_id
+    LEFT JOIN Teachers t ON t.teacher_id = :teacherId
+    WHERE sg.shared_teacher_id = :teacherId
+    
     ");
     $stmt->bindParam(':teacherId', $teacherId, PDO::PARAM_INT);
     $stmt->execute();

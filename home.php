@@ -198,8 +198,8 @@
             <h3 class="card-title"><strong>Choices</strong></h3>
           </div> <!-- /.card-body -->
           <div class="card-body">
-              <a href="https://bfactor.org/testing/students.php">Students</a><br>
-              <a href="https://bfactor.org/testing/courses.php">Courses</a><br>
+              <a href="./students.php">Students</a><br>
+              <a href="./courses.php">Courses</a><br>
             <div>
             </div>
           </div><!-- /.card-body -->
