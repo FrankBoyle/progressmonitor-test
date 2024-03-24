@@ -8170,6 +8170,12 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 }
 
+.bg-navy {
+  --bs-navy-rgb: 0, 0, 128;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-navy-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
