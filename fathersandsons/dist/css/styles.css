@@ -11,12 +11,24 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- 
+
 /* Directly targeting the calendar's container */
-#calendar-container #calendar {
-  width: 100%;
-  max-width: 600px;
-  margin: auto !important; /* Only use !important if necessary */
+.calendar-custom {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .calendar-custom {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-custom {
+        max-width: 100%;
+    }
 }
 
 
