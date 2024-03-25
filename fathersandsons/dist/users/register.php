@@ -1,6 +1,6 @@
 <?php
 // Include your database connection script
-include './users/db.php';
+include 'db.php';
 
 // Retrieve user inputs
 $firstName = $_POST['firstName'];
