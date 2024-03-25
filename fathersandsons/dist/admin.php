@@ -11,6 +11,7 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
 
         <script src="./js/scripts.js"></script>
         <!-- Font Awesome icons (free version)-->
@@ -45,12 +46,11 @@
           <div class="container px-5">
               <div class="row gx-5 align-items-center">
                   <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
                   </div>
                   <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                       <h2 class="display-4">Message from the board</h2>
-                       <p>example text here</p>
+                    <div id='calendar'></div>
+
                     </div>
                   </div>
                 </div>
