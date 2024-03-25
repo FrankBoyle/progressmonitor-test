@@ -25,8 +25,10 @@ $(document).ready(function() {
 
     // This should be outside the 'submit' event handler
     var calendarEl = document.getElementById('calendar');
+    var calendarHeight = window.matchMedia("(max-width: 799px)").matches ? "auto" : 650; // "auto" for mobile devices
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
+        height: calendarHeight,
         headerToolbar: {
             left: 'prev,next today',
             center: 'title',
