@@ -49,10 +49,7 @@
 
         <!-- Content section 1 -->
         <section id="calendar">
-                        <!-- This is the container with the custom class -->
-                        <div id="calendar-container" class="calendar-custom">
                             <div id='calendar'></div>
-                        </div>          
         </section>
 
 

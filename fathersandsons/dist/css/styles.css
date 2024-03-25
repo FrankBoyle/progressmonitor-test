@@ -13,7 +13,7 @@
 
 
 /* Directly targeting the calendar's container */
-.calendar-custom {
+.calendar {
   max-width: 800px; /* Adjust the width as needed */
   margin: 0 auto; /* This centers the calendar */
 }
