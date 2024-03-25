@@ -10,11 +10,15 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- #calendar-container {
+
+ 
+/* Directly targeting the calendar's container */
+#calendar-container #calendar {
   width: 100%;
   max-width: 600px;
-  margin: auto; /* Center the calendar */
+  margin: auto !important; /* Only use !important if necessary */
 }
+
 
  :root {
   --bs-blue: #0d6efd;
