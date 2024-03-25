@@ -34,11 +34,55 @@ $(document).ready(function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek'
         },
+        dateClick: function(info) {
+            // Trigger modal form here
+            $('#eventModal').modal('show'); // Assuming you're using Bootstrap's modal
+            $('#eventStart').val(info.dateStr); // Automatically set the start date
+            $('#eventEnd').val(info.dateStr); // Optionally set the end date
+        },
         // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
         events: './users/fetch-events.php',
         aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
     });
     calendar.render();
+
+        // Listen for form submission
+        $('#addEventForm').submit(function(e) {
+            e.preventDefault(); // Prevent default form submission
+    
+            // Collect the form data
+            var eventName = $('#eventName').val();
+            var eventStart = $('#eventStart').val();
+            var eventEnd = $('#eventEnd').val();
+    
+            // Send the data to add_events.php
+            $.ajax({
+                type: "POST",
+                url: "./users/add_events.php", // Path to your add_events.php file
+                data: {
+                    name: eventName,
+                    start: eventStart,
+                    end: eventEnd
+                },
+                success: function(response) {
+                    var data = JSON.parse(response);
+                    if(data.success) {
+                        $('#eventModal').modal('hide'); // Hide the modal
+                        // Optionally, refresh the calendar or add the event directly
+                        calendar.addEvent({
+                            title: eventName,
+                            start: eventStart,
+                            end: eventEnd
+                        });
+                    } else {
+                        alert('Failed to add event: ' + data.message);
+                    }
+                },
+                error: function() {
+                    alert('Error: Could not contact the server.');
+                }
+            });
+        });
 });
 
 
