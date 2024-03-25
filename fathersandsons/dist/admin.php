@@ -50,7 +50,7 @@
         <section id="calendars">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-10">
                         <div class="p-5">
                             <div id='calendar'></div>
                         </div>
