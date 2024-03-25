@@ -51,9 +51,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6">
-                        <div class="p-5">
                             <div id='calendar'></div>
-                        </div>
                     </div>
                 </div>
             </div>
