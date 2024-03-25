@@ -71,17 +71,14 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
-                            <h2 class="display-4">Purpose</h2>
-                            <p>CLUB PURPOSE
-The purpose of the Club is to:
-1. Promote and foster the relationship of father and son(s) by engaging in
-activities designed to bring, and to bind, fathers and sons closer together in
-the spirit of Our Savior Jesus Christ and St. Joseph, His foster father.
-2. Promote, encourage and maintain the honor and dignity of Catholic
-gentlemen and of good citizenship.
-3. Promote love of God, Church, Country and Family.
-4. Foster a spirit of good fellowship, love, charity and cooperation among its
-members of the parish and the community in which its members reside.</p>
+                            <h2 class="display-4">Club Purpose</h2>
+                            <p>The purpose of the Club is to:</p>
+                              <ol>
+                                <li>Promote and foster the relationship of father and son(s) by engaging in activities designed to bring, and to bind, fathers and sons closer together in the spirit of Our Savior Jesus Christ and St. Joseph, His foster father.</li>
+                                <li>Promote, encourage and maintain the honor and dignity of Catholic gentlemen and of good citizenship.</li>
+                                <li>Promote love of God, Church, Country and Family.</li>
+                                <li>Foster a spirit of good fellowship, love, charity and cooperation among its members of the parish and the community in which its members reside.</li>
+                              </ol>
                         </div>
                     </div>
                 </div>
