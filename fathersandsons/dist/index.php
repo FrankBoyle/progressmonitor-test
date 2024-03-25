@@ -140,11 +140,11 @@
                                 <input type="password" class="form-control" id="signUpPassword">
                             </div>
                             <!-- Add more fields as needed -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Sign Up</button>
+                            </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Sign Up</button>
                     </div>
                 </div>
             </div>
