@@ -14,29 +14,29 @@ $(document).ready(function() {
                     // Handle failure
                     alert('Registration failed: ' + response);
                 }
+            },
+            error: function(xhr, status, error) {
+                // Handle AJAX error
+                console.error("AJAX Error: " + status + "\nError: " + error);
+                alert('Registration failed. Please try again later.');
+            }
+        });
+    });
+
+    // This should be outside the 'submit' event handler
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek'
         },
-    
-    error: function(xhr, status, error) {
-        // Handle AJAX error
-        console.error("AJAX Error: " + status + "\nError: " + error);
-        alert('Registration failed. Please try again later.');
-    }
-});
-});
-
-var calendarEl = document.getElementById('calendar');
-var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek'
-    },
-    events: 'path/to/your/fetch-events.php',
-    aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
-});
-calendar.render();
-
+        // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
+        events: 'path/to/your/fetch-events.php',
+        aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
+    });
+    calendar.render();
 });
 
 
