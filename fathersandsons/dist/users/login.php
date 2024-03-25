@@ -24,7 +24,7 @@ if ($user) {
         $_SESSION['role'] = $user['Role']; // Assuming you have a Role column
         
         // Redirect to a logged-in page
-        header('Location: dashboard.php');
+        header('Location: ../index.php');
         exit;
     } else {
         // Password is not correct
