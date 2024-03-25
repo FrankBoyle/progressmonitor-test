@@ -48,9 +48,9 @@
 
         <!-- Content section 1 -->
         <section id="calendars">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-10">
+            <div class="container">
+                <div class="align-items-center">
+                    <div class="col-12 col-md-6">
                         <div class="p-5">
                             <div id='calendar'></div>
                         </div>
