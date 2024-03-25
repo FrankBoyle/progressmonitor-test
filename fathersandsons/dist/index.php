@@ -161,7 +161,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="login.php">
+                        <form method="POST" action="./users/login.php">
                             <div class="mb-3">
                                 <label for="logInEmail" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="logInEmail" name="email" required aria-describedby="emailHelp">
