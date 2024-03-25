@@ -1,25 +1,25 @@
 $(document).ready(function() {
     $('#registrationForm').submit(function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        var formData = $(this).serialize(); // Serialize the form data
+        e.preventDefault();
+        var formData = $(this).serialize();
 
         $.ajax({
             type: "POST",
             url: "./users/register.php",
             data: formData,
             success: function(response) {
-                // Assuming your PHP script echoes "success" on successful registration
-                if(response.trim() == "success") {
-                    $('#signUpModal').modal('hide'); // Close the modal
-                    // Optional: Show a success message or redirect
+                // Check the response from your PHP script
+                if(response.trim() == "Success!") {
+                    $('#signUpModal').modal('hide');
                     alert('Registration successful. You can now log in.');
                 } else {
-                    // Handle registration failure
-                    alert('Registration failed: ' + response);
+                    // Display the error message directly to the user
+                    alert(response);
                 }
             }
         });
     });
 });
+
 
 
