@@ -121,8 +121,16 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form method="post" action="register.php">
                             <!-- Add form fields for registration here -->
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
                             <div class="mb-3">
                                 <label for="signUpEmail" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp">
