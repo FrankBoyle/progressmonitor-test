@@ -31,7 +31,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#calendar">Calendar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#calendar1">Calendar</a></li>
                         <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
                         <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
                         <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
@@ -47,7 +47,7 @@
         </header>
 
         <!-- Content section 1 -->
-        <section id="calendar">
+        <section id="calendar1">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
