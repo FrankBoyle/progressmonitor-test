@@ -41,7 +41,7 @@ $(document).ready(function() {
             $('#eventEnd').val(info.dateStr); // Optionally set the end date
         },
         // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
-        events: './users/fetch-events.php',
+        events: './users/fetch_events.php',
         aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
     });
     calendar.render();
