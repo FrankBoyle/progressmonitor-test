@@ -183,7 +183,7 @@
 
         <script>
             $(document).ready(function() {
-                $('#registrationForm').on('submit', function(e) {
+                $('#registrationform').on('submit', function(e) {
                     e.preventDefault(); // Stop the form from causing a page reload.
 
                     $.ajax({
@@ -208,6 +208,6 @@
             });
         });
     });
-</script>
+    </script>
     </body>
 </html>
