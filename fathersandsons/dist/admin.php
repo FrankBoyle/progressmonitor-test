@@ -40,6 +40,10 @@
             </div>
         </nav>
 
+        <!-- Header-->
+        <header class="masthead text-center text-white bg-navy">
+
+        </header>
 
         <!-- Content section 1-->
         <section id="calendar">
