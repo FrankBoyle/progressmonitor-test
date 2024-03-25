@@ -33,7 +33,7 @@ $(document).ready(function() {
             right: 'dayGridMonth,timeGridWeek'
         },
         // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
-        events: 'path/to/your/fetch-events.php',
+        events: './users/fetch-events.php',
         aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
     });
     calendar.render();
