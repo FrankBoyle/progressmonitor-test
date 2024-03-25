@@ -16,7 +16,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 768px) { /* Adjust to your breakpoint */
+@media (min-width: 800px) { /* Adjust to your breakpoint */
   #calendar {
       width: 1000px; /* Width for larger screens */
   }
