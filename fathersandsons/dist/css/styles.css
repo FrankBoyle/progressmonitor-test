@@ -11,16 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- #calendar {
-  width: 100%;
-  margin: 0 auto;
-}
 
-@media (min-width: 800px) { /* Adjust to your breakpoint */
-  #calendar {
-      width: 1000px; /* Width for larger screens */
-  }
-}
 
  :root {
   --bs-blue: #0d6efd;
