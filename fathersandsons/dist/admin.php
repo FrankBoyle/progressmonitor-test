@@ -154,9 +154,79 @@
                 </div>
             </div>
         </div>
+<!-- Event Addition Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventModalLabel">Add New Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Event Form -->
+        <form id="addEventForm">
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="eventName" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventStart" class="form-label">Start Date/Time</label>
+                <input type="datetime-local" class="form-control" id="eventStart" name="start" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventEnd" class="form-label">End Date/Time</label>
+                <input type="datetime-local" class="form-control" id="eventEnd" name="end" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="eventDescription" name="description"></textarea>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="submitEvent()">Save Event</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <script>
+<!-- Event Addition Modal -->
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eventModalLabel">Add New Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Event Form -->
+        <form id="addEventForm">
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="eventName" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventStart" class="form-label">Start Date/Time</label>
+                <input type="datetime-local" class="form-control" id="eventStart" name="start" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventEnd" class="form-label">End Date/Time</label>
+                <input type="datetime-local" class="form-control" id="eventEnd" name="end" required>
+            </div>
+            <div class="mb-3">
+                <label for="eventDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="eventDescription" name="description"></textarea>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="submitEvent()">Save Event</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    </script>
     </body>
 </html>
