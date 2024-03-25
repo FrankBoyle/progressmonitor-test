@@ -23,10 +23,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#!">Announcements</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Calendar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#calendar">Calendar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sign-up">Sign Up</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#log-in">Log In</a></li>
                     </ul>
                 </div>
             </div>
@@ -71,8 +71,17 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="p-5">
-                            <h2 class="display-4">Saint Monica Church</h2>
-                            <p>example text here</p>
+                            <h2 class="display-4">Purpose</h2>
+                            <p>CLUB PURPOSE
+The purpose of the Club is to:
+1. Promote and foster the relationship of father and son(s) by engaging in
+activities designed to bring, and to bind, fathers and sons closer together in
+the spirit of Our Savior Jesus Christ and St. Joseph, His foster father.
+2. Promote, encourage and maintain the honor and dignity of Catholic
+gentlemen and of good citizenship.
+3. Promote love of God, Church, Country and Family.
+4. Foster a spirit of good fellowship, love, charity and cooperation among its
+members of the parish and the community in which its members reside.</p>
                         </div>
                     </div>
                 </div>
@@ -95,39 +104,6 @@
             </div>
         </section>
         
-        <!-- Content section 4-->
-        <section>
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">Message from the board</h2>
-                            <p>example text here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Content section 5-->
-        <section>
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">Message from the board</h2>
-                            <p>example text here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Footer-->
         <footer class="py-5 bg-navy">
