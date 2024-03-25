@@ -14,10 +14,10 @@
 
 /* Directly targeting the calendar's container */
 .calendar-custom {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px; /* Adjust the width as needed */
+  margin: 0 auto; /* This centers the calendar */
 }
+
 
  :root {
   --bs-blue: #0d6efd;
