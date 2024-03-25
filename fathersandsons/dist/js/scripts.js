@@ -34,7 +34,7 @@ $(document).ready(function() {
         },
         // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
         events: './users/fetch-events.php',
-        aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
+        aspectRatio: 2 // Adjusts the width-to-height ratio of the calendar
     });
     calendar.render();
 });
