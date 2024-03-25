@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#registrationForm').on('submit', function(e) {
+    $('#registrationform').on('submit', function(e) {
         e.preventDefault(); // Stop the form from causing a page reload.
 
         $.ajax({
@@ -14,14 +14,15 @@ $(document).ready(function() {
                     // Handle failure
                     alert('Registration failed: ' + response);
                 }
-            },
-            error: function(xhr, status, error) {
-                // Handle AJAX error
-                console.error("AJAX Error: " + status + "\nError: " + error);
-                alert('Registration failed. Please try again later.');
-            }
-        });
-    });
+        },
+    
+    error: function(xhr, status, error) {
+        // Handle AJAX error
+        console.error("AJAX Error: " + status + "\nError: " + error);
+        alert('Registration failed. Please try again later.');
+    }
+});
+});
 });
 
 
