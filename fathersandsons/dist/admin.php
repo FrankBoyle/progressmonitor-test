@@ -49,7 +49,7 @@
         <!-- Content section 1 -->
         <section id="calendars">
             <div class="container">
-                <div class="align-items-center">
+                <div class="row align-items-center">
                     <div class="col-12 col-md-6">
                         <div class="p-5">
                             <div id='calendar'></div>
