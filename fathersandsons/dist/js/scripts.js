@@ -51,9 +51,9 @@ $(document).ready(function() {
             e.preventDefault(); // Prevent default form submission
     
             // Collect the form data
-            var eventName = $('#eventName').val();
-            var eventStart = $('#eventStart').val();
-            var eventEnd = $('#eventEnd').val();
+            let eventName = $('#eventName').val();
+            let eventStart = $('#eventStart').val();
+            let eventEnd = $('#eventEnd').val();
     
             // Send the data to add_events.php
             $.ajax({
