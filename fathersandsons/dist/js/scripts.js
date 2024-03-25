@@ -1,21 +1,24 @@
 $(document).ready(function() {
-    $('#registrationForm').submit(function(e) {
-        e.preventDefault();
-        var formData = $(this).serialize();
+    $('#registrationForm').on('submit', function(e) {
+        e.preventDefault(); // Stop the form from causing a page reload.
 
         $.ajax({
             type: "POST",
             url: "./users/register.php",
-            data: formData,
+            data: $(this).serialize(), // Serializes the form's elements.
             success: function(response) {
-                // Check the response from your PHP script
-                if(response.trim() == "Success!") {
-                    $('#signUpModal').modal('hide');
-                    alert('Registration successful. You can now log in.');
+                if (response.trim() === "New record created successfully") {
+                    $('#signUpModal').modal('hide'); // Close the signup modal
+                    alert('Registration successful. You can now log in.'); // Inform the user
                 } else {
-                    // Display the error message directly to the user
-                    alert(response);
+                    // Handle failure
+                    alert('Registration failed: ' + response);
                 }
+            },
+            error: function(xhr, status, error) {
+                // Handle AJAX error
+                console.error("AJAX Error: " + status + "\nError: " + error);
+                alert('Registration failed. Please try again later.');
             }
         });
     });
