@@ -26,11 +26,20 @@ $(document).ready(function() {
 
 var calendarEl = document.getElementById('calendar');
 var calendar = new FullCalendar.Calendar(calendarEl, {
-  initialView: 'dayGridMonth'
+    initialView: 'dayGridMonth',
+    headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek'
+    },
+    events: 'path/to/your/fetch-events.php',
+    aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
 });
 calendar.render();
 
 });
+
+
 
 
 
