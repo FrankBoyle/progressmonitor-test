@@ -161,21 +161,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            <!-- Add form fields for login here -->
+                        <form method="POST" action="login.php">
                             <div class="mb-3">
                                 <label for="logInEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="logInEmail" aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="logInEmail" name="email" required aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="logInPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="logInPassword">
+                                <input type="password" class="form-control" id="logInPassword" name="password" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Log In</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Log In</button>
                     </div>
                 </div>
             </div>
