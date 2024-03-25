@@ -29,9 +29,9 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#calendar">Calendar</a></li>
                         <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
                         <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#calendar">Calendar</a></li>
                         <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</a></li>
                     </ul>
@@ -52,7 +52,25 @@
             <div class="bg-circle-3 bg-circle"></div>
             <div class="bg-circle-4 bg-circle"></div>
         </header>
+
         <!-- Content section 1-->
+        <section id="calendar">
+          <div class="container px-5">
+              <div class="row gx-5 align-items-center">
+                  <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
+                  </div>
+                  <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                       <h2 class="display-4">Message from the board</h2>
+                       <p>example text here</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content section 2-->
         <section id="members">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
@@ -69,8 +87,8 @@
                 </div>
             </div>
         </section>
-        <!-- Content section 2-->
-        <section>
+        <!-- Content section 3-->
+        <section id="announcements">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
@@ -91,22 +109,7 @@
                 </div>
             </div>
         </section>
-        <!-- Content section 3-->
-        <section>
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1">
-                        <div class="p-5">
-                            <h2 class="display-4">Message from the board</h2>
-                            <p>example text here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         
 
         <!-- Footer-->
