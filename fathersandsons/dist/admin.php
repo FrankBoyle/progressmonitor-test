@@ -45,18 +45,20 @@
 
         </header>
 
-        <!-- Content section 1-->
+        <!-- Content section 1 -->
         <section id="calendar">
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
-
-                        <div id="calendar-container" class="calendar-custom">\
+                    <div class="col-lg-6 order-lg-2">
+                        <!-- This is the container with the custom class -->
+                        <div id="calendar-container" class="calendar-custom">
                             <div id='calendar'></div>
                         </div>          
-
+                    </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Content section 2-->
         <section id="members">
