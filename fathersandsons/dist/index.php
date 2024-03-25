@@ -7,6 +7,12 @@
         <meta name="author" content="" />
         <title>Saint Monica Fathers and Sons</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+                <!-- Bootstrap core JS-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="./js/scripts.js"></script>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -106,12 +112,7 @@
         <footer class="py-5 bg-navy">
             <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Saint Monica Fathers and Sons 2024</p></div>
         </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <script src="./js/scripts.js"></script>
 
 
         <!-- Sign Up Modal -->
