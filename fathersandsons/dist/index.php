@@ -112,43 +112,42 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 
-        <!-- Sign Up Modal -->
-        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="./users/register.php">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" required>
                     </div>
-                    <div class="modal-body">
-                        <form method="post" action="./users/register.php">
-                            <!-- Add form fields for registration here -->
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="signUpPassword">
-                            </div>
-                            <!-- Add more fields as needed -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Sign Up</button>
-                            </div>
-                        </form>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName" required>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="signUpEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="signUpEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signUpPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="signUpPassword" name="password" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
+
 
         <!-- Log In Modal -->
         <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
