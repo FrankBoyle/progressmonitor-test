@@ -121,7 +121,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="register.php">
+                        <form method="post" action="./users/register.php">
                             <!-- Add form fields for registration here -->
                             <div class="mb-3">
                                 <label for="firstName" class="form-label">First Name</label>
