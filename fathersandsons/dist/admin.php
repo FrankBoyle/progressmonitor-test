@@ -38,20 +38,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Header-->
-        <header class="masthead text-center text-white bg-navy">
-            <div class="masthead-content">
-                <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">Saint Monica Fathers and Sons Club</h1>
-                    <h2 class="masthead-subheading mb-0">Founded in 1956</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
-                </div>
-            </div>
-            <div class="bg-circle-1 bg-circle"></div>
-            <div class="bg-circle-2 bg-circle"></div>
-            <div class="bg-circle-3 bg-circle"></div>
-            <div class="bg-circle-4 bg-circle"></div>
-        </header>
+
 
         <!-- Content section 1-->
         <section id="calendar">
