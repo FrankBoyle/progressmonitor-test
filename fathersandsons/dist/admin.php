@@ -87,6 +87,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Content section 3-->
         <section id="announcements">
             <div class="container px-5">
@@ -110,51 +111,33 @@
             </div>
         </section>
 
-        
+        <!-- Content section 3-->
+        <section id="events">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5"><img class="img-fluid" src="assets/img/SaintMonica1-614x461.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4">Club Purpose</h2>
+                            <p>The purpose of the Club is to:</p>
+                              <ol>
+                                <li>Promote and foster the relationship of father and son(s) by engaging in activities designed to bring, and to bind, fathers and sons closer together in the spirit of Our Savior Jesus Christ and St. Joseph, His foster father.</li>
+                                <li>Promote, encourage and maintain the honor and dignity of Catholic gentlemen and of good citizenship.</li>
+                                <li>Promote love of God, Church, Country and Family.</li>
+                                <li>Foster a spirit of good fellowship, love, charity and cooperation among its members of the parish and the community in which its members reside.</li>
+                              </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer-->
         <footer class="py-5 bg-navy">
             <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Saint Monica Fathers and Sons 2024</p></div>
         </footer>
-
-
-
-        <!-- Sign Up Modal -->
-        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="registrationform" method="post" action="./users/register.php">
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" name="lastName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpEmail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="signUpEmail" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="signUpPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="signUpPassword" name="password" required>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Sign Up</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
 
         <!-- Log In Modal -->
         <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
