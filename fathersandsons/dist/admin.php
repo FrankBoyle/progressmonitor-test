@@ -1,147 +1,188 @@
 <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Saint Monica Fathers and Sons</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+                <!-- Bootstrap core JS-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<html
-  lang="en"
-  class="light-style customizer-hide"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="assets/"
-  data-template="vertical-menu-template-no-customizer">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+        <script src="./js/scripts.js"></script>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="#page-top">Saint Monica Fathers and Sons Club</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#members">Members</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#announcements">Announcements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#calendar">Calendar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="masthead text-center text-white bg-navy">
+            <div class="masthead-content">
+                <div class="container px-5">
+                    <h1 class="masthead-heading mb-0">Saint Monica Fathers and Sons Club</h1>
+                    <h2 class="masthead-subheading mb-0">Founded in 1956</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Learn More</a>
+                </div>
+            </div>
+            <div class="bg-circle-1 bg-circle"></div>
+            <div class="bg-circle-2 bg-circle"></div>
+            <div class="bg-circle-3 bg-circle"></div>
+            <div class="bg-circle-4 bg-circle"></div>
+        </header>
+        <!-- Content section 1-->
+        <section id="scroll">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid" src="assets/img/StJoseph1.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">St. Monica's Parish</h2>
+                            <h3>Preamble</h3>
+                            <p>BE IT KNOWN, that certain fathers who are members of the Parish of St. Monica's Roman Catholic Church of Philadelphia, Pennsylvania, have associated themselves for certain beneficial and religious purposes, upon the terms, and by the name, hereinafter stated, and being desirous of promoting the God-given relationship of Father and Son, and to do all and everything within their means to promote and foster said relationship under the protective veil of the patron saint of all fathers and sons, St. Joseph, do hereby declare, set forth and certify that the following are purposes, object, articles and conditions of their club, for and upon which they have associated themselves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section 2-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="p-5"><img class="img-fluid" src="assets/img/SaintMonica1-614x461.jpg" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <h2 class="display-4">Club Purpose</h2>
+                            <p>The purpose of the Club is to:</p>
+                              <ol>
+                                <li>Promote and foster the relationship of father and son(s) by engaging in activities designed to bring, and to bind, fathers and sons closer together in the spirit of Our Savior Jesus Christ and St. Joseph, His foster father.</li>
+                                <li>Promote, encourage and maintain the honor and dignity of Catholic gentlemen and of good citizenship.</li>
+                                <li>Promote love of God, Church, Country and Family.</li>
+                                <li>Foster a spirit of good fellowship, love, charity and cooperation among its members of the parish and the community in which its members reside.</li>
+                              </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content section 3-->
+        <section>
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="p-5"><img class="img-fluid" src="assets/img/SMS-Logo-1-1.png" alt="..." /></div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="p-5">
+                            <h2 class="display-4">Message from the board</h2>
+                            <p>example text here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
 
-    <title>Sneat - Free Bootstrap 5 HTML Admin Template</title>
+        <!-- Footer-->
+        <footer class="py-5 bg-navy">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Saint Monica Fathers and Sons 2024</p></div>
+        </footer>
 
-    <meta name="description" content="" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="assets/vendor/css/core.css" />
-    <link rel="stylesheet" href="assets/vendor/css/theme-default.css" />
-    <link rel="stylesheet" href="assets/css/demo.css" />
-  </head>
-
-  <body>
-    <!-- Content -->
-    <div class="container flex-grow-1 container-p-y my-2">
-      <h3>Thank you for using Sneat - Free Bootstrap 5 HTML Admin Template! 😇</h3>
-      <p>
-        If you’re a developer looking for most Powerful & comprehensive Bootstrap 5 HTML Admin Dashboard Template built
-        for developers, rich with features, and highly customizable look no further than Sneat. We’ve followed the
-        highest industry standards to bring you the very best admin template that is not only fast and easy to use but
-        highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you
-        want with very little hassle.
-      </p>
-
-      <!-- Examples -->
-      <div class="row mt-sm-4 mt-3">
-        <div class="col-12 mb-3">
-          <div class="card">
-            <h5 class="card-header">Template Links</h5>
-            <!-- Template Demo Links -->
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th>Free Version</th>
-                  <td><a href="html/index.html" target="_blank">Vertical Menu Template</a></td>
-                </tr>
-              </tbody>
-            </table>
-            <!--/ Template Demo Links -->
-          </div>
+        <!-- Sign Up Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registrationform" method="post" action="./users/register.php">
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signUpEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signUpEmail" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="signUpPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signUpPassword" name="password" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-12 mb-3">
-          <div class="card">
-            <h5 class="card-header">Other Important Links</h5>
-            <!-- Other Links -->
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">URL</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>License</td>
-                  <td>
-                    <a href="https://themeselection.com/license/" target="_blank"
-                      >https://themeselection.com/license/</a
-                    >
-                  </td>
-                </tr>
 
-                <tr>
-                  <td>Documentation</td>
-                  <td>
-                    <a
-                      href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/"
-                      target="_blank"
-                      >https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/</a
-                    >
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Changelog</td>
-                  <td>
-                    <a
-                      href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/blob/main/CHANGELOG.md"
-                      target="_blank"
-                      >https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/blob/main/CHANGELOG.md</a
-                    >
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>GitHub Repository</td>
-                  <td>
-                    <a href="https://github.com/themeselection/sneat-html-admin-template-free" target="_blank"
-                      >https://github.com/themeselection/sneat-html-admin-template-free</a
-                    >
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>Support</td>
-                  <td>
-                    <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank"
-                      >https://github.com/themeselection/sneat-html-admin-template-free/issues</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <!--/ Other Links -->
-          </div>
+        <!-- Log In Modal -->
+        <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="logInModalLabel">Log In</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="./users/login.php">
+                            <div class="mb-3">
+                                <label for="logInEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="logInEmail" name="email" required aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="logInPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="logInPassword" name="password" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-12 mb-3">
-          <p>Looking for <strong>PRO</strong> version with <strong>Premium support</strong>?</p>
-          <div class="upgrade-to-pro">
-            <a
-              href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/"
-              target="_blank"
-              class="btn btn-danger"
-              >Upgrade to <strong class="ms-1">Sneat Pro</strong></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- / Content -->
-  </body>
+        <script>
+
+    </script>
+    </body>
 </html>
