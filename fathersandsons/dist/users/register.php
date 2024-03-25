@@ -1,27 +1,33 @@
 <?php
-include 'db.php'; // Your database connection file
+// Include your database connection script
+include 'db.php';
 
-// Assuming you've already retrieved and sanitized the form inputs into $firstName, $lastName, $email, $password
+// Retrieve user inputs
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
+// Password encryption for security
 $encryptedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+// Prepare SQL statement to prevent SQL injection
+$sql = "INSERT INTO user_list (FirstName, LastName, Email, Password) VALUES (:firstName, :lastName, :email, :password)";
+
+$statement = $connection->prepare($sql);
+
 try {
-    $sql = "INSERT INTO user_list (FirstName, LastName, Email, Password) VALUES (:firstName, :lastName, :email, :password)";
-    $stmt = $connection->prepare($sql);
-    $stmt->bindParam(':firstName', $firstName);
-    $stmt->bindParam(':lastName', $lastName);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $encryptedPassword);
-    $stmt->execute();
-    echo "Success!";
+    // Bind parameters
+    $statement->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+    $statement->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
+    $statement->bindParam(':password', $encryptedPassword, PDO::PARAM_STR);
+
+    // Execute the statement
+    $statement->execute();
+
+    echo "New record created successfully";
 } catch (PDOException $e) {
-    if ($e->errorInfo[1] == 1062) {
-        echo "There is already an account with that e-mail.";
-    } else {
-        echo "Error: Something went wrong.";
-        // Log the error or send it to an administrator
-        // error_log($e->getMessage());
-    }
+    exit("Error: " . $e->getMessage());
 }
 ?>
-
