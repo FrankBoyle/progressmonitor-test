@@ -39,13 +39,20 @@ $(document).ready(function() {
              $('#eventStart').val(info.dateStr); // Set the start date based on clicked date
          },
          eventClick: function(info) {
-             // Populate the edit modal and show it
-             $('#editEventId').val(info.event.id);
-             $('#editEventName').val(info.event.title);
-             $('#editEventStart').val(info.event.start.toISOString().slice(0, 16)); // Format for datetime-local input
-             $('#editEventDescription').val(info.event.extendedProps.description); // Assuming description is stored in extendedProps
-             $('#editEventModal').modal('show');
-         }
+            // Open the modal
+            $('#editEventModal').modal('show');
+
+            // Populate the form with event data
+            $('#editEventId').val(info.event.id);
+            $('#editEventName').val(info.event.title);
+
+            // Format the date and time correctly for the datetime-local input
+            var startStr = new Date(info.event.start).toISOString().slice(0, 16);
+            $('#editEventStart').val(startStr);
+
+            // Assuming you store the description in event.extendedProps
+            $('#editEventDescription').val(info.event.extendedProps.description);
+        }
      });
      calendar.render();
  
