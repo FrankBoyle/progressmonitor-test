@@ -24,9 +24,9 @@ $(document).ready(function() {
     });
 
     // This should be outside the 'submit' event handler
-    var calendarEl = document.getElementById('calendar');
-    var calendarHeight = window.matchMedia("(max-width: 799px)").matches ? "auto" : 650; // "auto" for mobile devices
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+    let calendarEl = document.getElementById('calendar');
+    let calendarHeight = window.matchMedia("(max-width: 799px)").matches ? "auto" : 650; // "auto" for mobile devices
+    let calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         height: calendarHeight,
         headerToolbar: {
@@ -46,9 +46,9 @@ $(document).ready(function() {
     });
     calendar.render();
 
-    function submitEvent() {
+    $('#addEventForm').on('submit', function(e) {
         // Construct data object manually if serialization doesn't work
-        var eventData = {
+        let eventData = {
             title: $('#eventName').val(),
             start: $('#eventStart').val(),
             end: $('#eventEnd').val(),
@@ -73,7 +73,7 @@ $(document).ready(function() {
                 alert('Error: Could not save the event.');
             }
         });
-    }
+    });
     
 });
 
