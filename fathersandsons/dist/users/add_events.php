@@ -6,7 +6,7 @@ session_start();
 require_once 'db.php'; // Adjust this path as needed
 
 // Check if the user is logged in and has admin privileges
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'readWrite') {
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'readWrite') {
     echo json_encode(['success' => false, 'message' => 'Unauthorized']);
     exit;
 }
