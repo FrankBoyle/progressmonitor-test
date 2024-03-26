@@ -11,13 +11,18 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- .fc-event-title {
-  white-space: normal; /* Allow the text to wrap */
+ .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
+  margin-right: 2px;
 }
 
-.fc-event {
-  min-height: 50px; /* Ensure there's enough room for wrapped text */
+.fc-direction-ltr .fc-daygrid-event.fc-event-start, .fc-direction-rtl .fc-daygrid-event.fc-event-end {
+  margin-left: 2px;
 }
+
+a.fc-event, a.fc-event:hover {
+  text-decoration: none;
+}
+
 
  #calendar {
   width: 100%;
@@ -31,6 +36,9 @@
 }
 
  :root {
+  --fc-border-color: #ddd;
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: #2c3e50;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
