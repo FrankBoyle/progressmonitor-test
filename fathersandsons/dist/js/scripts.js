@@ -82,7 +82,53 @@ $(document).ready(function() {
             }
         });
     }
+   
+        // Example of binding the event click (adjust according to your calendar setup)
+        $('#calendar').on('eventClick', function(event) {
+            // Populate the modal fields with the event details
+            $('#editEventId').val(event.id);
+            $('#editEventName').val(event.title);
+            $('#editEventStart').val(event.start.toISOString().slice(0,16)); // Adjust formatting as needed
+            $('#editEventDescription').val(event.description);
     
+            // Show the modal
+            $('#editEventModal').modal('show');
+        });
+    
+        // Handle save changes button click
+        $('#saveEventChanges').click(function() {
+            var eventId = $('#editEventId').val();
+            var title = $('#editEventName').val();
+            var start = $('#editEventStart').val();
+            var description = $('#editEventDescription').val();
+    
+            // Send the updated details to the server
+            $.ajax({
+                url: './users/update_events.php', // Adjust URL as needed
+                type: 'POST',
+                data: {
+                    eventId: eventId,
+                    title: title,
+                    start: start,
+                    description: description
+                },
+                success: function(response) {
+                    var result = JSON.parse(response);
+                    if(result.success) {
+                        // Close the modal
+                        $('#editEventModal').modal('hide');
+    
+                        // Optionally, refresh the calendar or update the event visually
+                    } else {
+                        alert('Failed to update event: ' + result.message);
+                    }
+                },
+                error: function() {
+                    alert('There was an error updating the event. Please try again.');
+                }
+            });
+        });
+
 });
 
 
