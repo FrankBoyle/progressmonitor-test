@@ -11,18 +11,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- .fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {
-  margin-right: 2px;
+ .fc-event-title {
+  font-size: 1.2em !important; /* Use important sparingly */
 }
-
-.fc-direction-ltr .fc-daygrid-event.fc-event-start, .fc-direction-rtl .fc-daygrid-event.fc-event-end {
-  margin-left: 2px;
-}
-
-a.fc-event, a.fc-event:hover {
-  text-decoration: none;
-}
-
 
  #calendar {
   width: 100%;
