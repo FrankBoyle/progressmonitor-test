@@ -168,6 +168,7 @@ if (isset($_SESSION['userID']) && isset($_SESSION['email']) && isset($_SESSION['
                 </div>
             </div>
         </div>
+
 <!-- Event Addition Modal -->
 <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -196,6 +197,39 @@ if (isset($_SESSION['userID']) && isset($_SESSION['email']) && isset($_SESSION['
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="saveEventButton">Save Event</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Event Modal -->
+<div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editEventForm">
+            <input type="hidden" id="editEventId">
+            <div class="mb-3">
+                <label for="editEventName" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="editEventName" required>
+            </div>
+            <div class="mb-3">
+                <label for="editEventStart" class="form-label">Start Date/Time</label>
+                <input type="datetime-local" class="form-control" id="editEventStart" required>
+            </div>
+            <div class="mb-3">
+                <label for="editEventDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="editEventDescription"></textarea>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveEventChanges">Save changes</button>
       </div>
     </div>
   </div>
