@@ -46,9 +46,9 @@ $(document).ready(function() {
     });
     calendar.render();
 
-    $("#addEventForm").submit(function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        submitEvent(); // Call your custom submit function
+    $('#saveEventButton').click(function(e) {
+        e.preventDefault(); // Prevent the default button click behavior
+        submitEvent(); // Call your submitEvent function
     });
 
     // Now, make sure the 'Save Event' button actually submits the form.
