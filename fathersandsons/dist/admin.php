@@ -1,3 +1,18 @@
+
+<?php
+session_start(); // Ensure the session is started
+
+if (isset($_SESSION['userID']) && isset($_SESSION['email']) && isset($_SESSION['role'])) {
+    echo "<div style='margin-top: 20px; color: white; background-color: black; padding: 10px;'>";
+    echo "<p>User ID: " . $_SESSION['userID'] . "</p>";
+    echo "<p>Email: " . $_SESSION['email'] . "</p>";
+    echo "<p>Role: " . $_SESSION['role'] . "</p>";
+    echo "</div>";
+} else {
+    echo "<p>Session variables are not set.</p>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
