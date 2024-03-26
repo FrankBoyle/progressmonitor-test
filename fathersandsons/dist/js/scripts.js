@@ -59,7 +59,6 @@ $(document).ready(function() {
         var eventData = {
             title: $('#eventName').val(),
             start: $('#eventStart').val(),
-            end: $('#eventEnd').val(),
             description: $('#eventDescription').val()
         };
     

@@ -188,10 +188,6 @@ if (isset($_SESSION['userID']) && isset($_SESSION['email']) && isset($_SESSION['
                 <input type="datetime-local" class="form-control" id="eventStart" name="start" required>
             </div>
             <div class="mb-3">
-                <label for="eventEnd" class="form-label">End Date/Time</label>
-                <input type="datetime-local" class="form-control" id="eventEnd" name="end" required>
-            </div>
-            <div class="mb-3">
                 <label for="eventDescription" class="form-label">Description</label>
                 <textarea class="form-control" id="eventDescription" name="description"></textarea>
             </div>
