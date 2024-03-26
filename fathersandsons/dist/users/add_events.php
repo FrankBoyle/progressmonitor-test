@@ -12,19 +12,18 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'readWrite') {
 }
 
 // Retrieve and sanitize input
-$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING); // Changed from 'name' to 'title'
+$title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
 $start = filter_input(INPUT_POST, 'start', FILTER_SANITIZE_STRING);
-$end = filter_input(INPUT_POST, 'end', FILTER_SANITIZE_STRING);
-$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING); // Added handling for 'description'
+$description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
 
 // Validation (basic example)
-if (empty($title) || empty($start) || empty($end)) {
+if (empty($title) || empty($start)) {
     echo json_encode(['success' => false, 'message' => 'Invalid input']);
     exit;
 }
 
 // Insert the event into the database
-$query = "INSERT INTO events (title, start, end, description) VALUES (?, ?, ?, ?)"; // Adjusted to include 'description'
+$query = "INSERT INTO events (title, start, description) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($query);
 
 // Check if the query was prepared successfully
@@ -33,7 +32,7 @@ if ($stmt === false) {
     exit;
 }
 
-$stmt->bind_param("ssss", $title, $start, $end, $description); // Adjusted to bind 'description'
+$stmt->bind_param("sss", $title, $start, $description);
 
 if ($stmt->execute()) {
     echo json_encode(['success' => true, 'message' => 'Event added successfully']);
