@@ -23,112 +23,85 @@ $(document).ready(function() {
         });
     });
 
-    // This should be outside the 'submit' event handler
-    let calendarEl = document.getElementById('calendar');
-    let calendarHeight = window.matchMedia("(max-width: 799px)").matches ? "auto" : 650; // "auto" for mobile devices
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        height: calendarHeight,
-        headerToolbar: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek'
-        },
-        dateClick: function(info) {
-            // Trigger modal form here
-            $('#eventModal').modal('show'); // Assuming you're using Bootstrap's modal
-            $('#eventStart').val(info.dateStr); // Automatically set the start date
-            $('#eventEnd').val(info.dateStr); // Optionally set the end date
-        },
-        // Make sure to replace 'path/to/your/fetch-events.php' with the actual path to your PHP script
-        events: './users/fetch_events.php',
-        aspectRatio: 1.5 // Adjusts the width-to-height ratio of the calendar
-    });
-    calendar.render();
-
-    $('#saveEventButton').click(function(e) {
-        e.preventDefault(); // Prevent the default button click behavior
-        submitEvent(); // Call your submitEvent function
-    });
-
-    // Now, make sure the 'Save Event' button actually submits the form.
-    // This can be done by changing the button type to 'submit' in your HTML:
-    // <button type="submit" class="btn btn-primary">Save Event</button>
-
-    function submitEvent() {
-        var eventData = {
-            title: $('#eventName').val(),
-            start: $('#eventStart').val(),
-            description: $('#eventDescription').val()
-        };
-    
-        $.ajax({
-            type: "POST",
-            url: "./users/add_events.php",
-            data: eventData,
-            success: function(response) {
-                var data = JSON.parse(response);
-                if(data.success) {
-                    $('#eventModal').modal('hide');
-                    // Add the event to the calendar or refresh events
-                    alert('Event added successfully.');
-                } else {
-                    alert('Failed to add event: ' + data.message);
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error:", error);
-                alert('Error: Could not save the event.');
-            }
-        });
-    }
-   
-        // Example of binding the event click (adjust according to your calendar setup)
-        $('#calendar').on('eventClick', function(event) {
-            // Populate the modal fields with the event details
-            $('#editEventId').val(event.id);
-            $('#editEventName').val(event.title);
-            $('#editEventStart').val(event.start.toISOString().slice(0,16)); // Adjust formatting as needed
-            $('#editEventDescription').val(event.description);
-    
-            // Show the modal
-            $('#editEventModal').modal('show');
-        });
-    
-        // Handle save changes button click
-        $('#saveEventChanges').click(function() {
-            var eventId = $('#editEventId').val();
-            var title = $('#editEventName').val();
-            var start = $('#editEventStart').val();
-            var description = $('#editEventDescription').val();
-    
-            // Send the updated details to the server
-            $.ajax({
-                url: './users/update_events.php', // Adjust URL as needed
-                type: 'POST',
-                data: {
-                    eventId: eventId,
-                    title: title,
-                    start: start,
-                    description: description
-                },
-                success: function(response) {
-                    var result = JSON.parse(response);
-                    if(result.success) {
-                        // Close the modal
-                        $('#editEventModal').modal('hide');
-    
-                        // Optionally, refresh the calendar or update the event visually
-                    } else {
-                        alert('Failed to update event: ' + result.message);
-                    }
-                },
-                error: function() {
-                    alert('There was an error updating the event. Please try again.');
-                }
-            });
-        });
-
+     // Initialize FullCalendar
+     var calendarEl = document.getElementById('calendar');
+     var calendar = new FullCalendar.Calendar(calendarEl, {
+         initialView: 'dayGridMonth',
+         height: 'auto',
+         headerToolbar: {
+             left: 'prev,next today',
+             center: 'title',
+             right: 'dayGridMonth,timeGridWeek'
+         },
+         events: './users/fetch_events.php', // Load events
+         dateClick: function(info) {
+             $('#eventModal').modal('show');
+             $('#eventStart').val(info.dateStr); // Set the start date based on clicked date
+         },
+         eventClick: function(info) {
+             // Populate the edit modal and show it
+             $('#editEventId').val(info.event.id);
+             $('#editEventName').val(info.event.title);
+             $('#editEventStart').val(info.event.start.toISOString().slice(0, 16)); // Format for datetime-local input
+             $('#editEventDescription').val(info.event.extendedProps.description); // Assuming description is stored in extendedProps
+             $('#editEventModal').modal('show');
+         }
+     });
+     calendar.render();
+ 
+     // "Add New Event" form submission
+     $('#addEventForm').on('submit', function(e) {
+         e.preventDefault();
+         var eventData = $(this).serialize(); // Serialize form data
+         
+         $.ajax({
+             type: "POST",
+             url: "./users/add_events.php",
+             data: eventData,
+             success: function(response) {
+                 var data = JSON.parse(response);
+                 if(data.success) {
+                     $('#eventModal').modal('hide');
+                     calendar.refetchEvents(); // Refresh calendar events
+                     alert('Event added successfully.');
+                 } else {
+                     alert('Failed to add event: ' + data.message);
+                 }
+             },
+             error: function(xhr, status, error) {
+                 alert('Error: Could not save the event.');
+             }
+         });
+     });
+ 
+     // "Edit Event" save changes button click
+     $('#saveEventChanges').click(function() {
+         var eventId = $('#editEventId').val();
+         var eventData = {
+             eventId: eventId,
+             title: $('#editEventName').val(),
+             start: $('#editEventStart').val(),
+             description: $('#editEventDescription').val()
+         };
+ 
+         $.ajax({
+             type: "POST",
+             url: './users/update_events.php', // URL to your update event script
+             data: eventData,
+             success: function(response) {
+                 var result = JSON.parse(response);
+                 if(result.success) {
+                     $('#editEventModal').modal('hide');
+                     calendar.refetchEvents(); // Refresh calendar events
+                 } else {
+                     alert('Failed to update event: ' + result.message);
+                 }
+             },
+             error: function() {
+                 alert('There was an error updating the event. Please try again.');
+             }
+         });
+     });
 });
 
 
