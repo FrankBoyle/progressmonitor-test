@@ -221,7 +221,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="submitEvent()">Save Event</button>
+        <button type="submit" class="btn btn-primary">Save Event</button>      
       </div>
     </div>
   </div>

@@ -46,9 +46,17 @@ $(document).ready(function() {
     });
     calendar.render();
 
-    $('#addEventForm').on('submit', function(e) {
-        // Construct data object manually if serialization doesn't work
-        let eventData = {
+    $("#addEventForm").submit(function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        submitEvent(); // Call your custom submit function
+    });
+
+    // Now, make sure the 'Save Event' button actually submits the form.
+    // This can be done by changing the button type to 'submit' in your HTML:
+    // <button type="submit" class="btn btn-primary">Save Event</button>
+
+    function submitEvent() {
+        var eventData = {
             title: $('#eventName').val(),
             start: $('#eventStart').val(),
             end: $('#eventEnd').val(),
@@ -64,8 +72,9 @@ $(document).ready(function() {
                 if(data.success) {
                     $('#eventModal').modal('hide');
                     // Add the event to the calendar or refresh events
+                    alert('Event added successfully.');
                 } else {
-                    alert('Failed to add event.');
+                    alert('Failed to add event: ' + data.message);
                 }
             },
             error: function(xhr, status, error) {
@@ -73,7 +82,7 @@ $(document).ready(function() {
                 alert('Error: Could not save the event.');
             }
         });
-    });
+    }
     
 });
 
