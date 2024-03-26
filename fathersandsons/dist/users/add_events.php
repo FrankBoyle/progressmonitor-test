@@ -24,7 +24,7 @@ if (empty($title) || empty($start)) {
 
 // Insert the event into the database
 $query = "INSERT INTO events (title, start, description) VALUES (?, ?, ?)";
-$stmt = $conn->prepare($query);
+$stmt = $connection->prepare($query);
 
 // Check if the query was prepared successfully
 if ($stmt === false) {
@@ -41,5 +41,5 @@ if ($stmt->execute()) {
 }
 
 $stmt->close();
-$conn->close();
+$connection->close();
 ?>
