@@ -56,29 +56,33 @@ $(document).ready(function() {
      });
      calendar.render();
  
-    // Directly attach an event handler to the "Save Event" button for click events
+    // Attach click event directly to the "Save Event" button
     $('#saveEventButton').on('click', function() {
-        // Serialize the form data
-        var formData = $('#addEventForm').serialize();
+        // Manually collect the form data
+        var eventData = {
+            title: $('#eventName').val(),
+            start: $('#eventStart').val(),
+            description: $('#eventDescription').val()
+        };
         
-        // Perform the AJAX request
+        // Perform the AJAX request to add the event
         $.ajax({
-            type: 'POST',
-            url: './users/add_events.php',
-            data: formData,
+            type: "POST",
+            url: "./users/add_events.php",
+            data: eventData,
             success: function(response) {
+                // Assuming the server responds with JSON
                 var data = JSON.parse(response);
                 if (data.success) {
-                    $('#eventModal').modal('hide');
+                    $('#eventModal').modal('hide'); // Close the modal
                     alert('Event added successfully.');
-                    // Assuming you have a calendar instance to refresh
-                    calendar.refetchEvents();
+                    calendar.refetchEvents(); // Refresh the calendar
                 } else {
                     alert('Failed to add event: ' + data.message);
                 }
             },
-            error: function() {
-                alert('There was an error adding the event. Please try again.');
+            error: function(xhr, status, error) {
+                alert('Error: Could not save the event. Please try again.');
             }
         });
     });
