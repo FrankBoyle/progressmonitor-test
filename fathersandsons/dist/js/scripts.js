@@ -56,33 +56,31 @@ $(document).ready(function() {
      });
      calendar.render();
  
-    // Attach click event directly to the "Save Event" button
-    $('#saveEventButton').on('click', function() {
-        // Manually collect the form data
-        var eventData = {
-            title: $('#eventName').val(),
-            start: $('#eventStart').val(),
-            description: $('#eventDescription').val()
-        };
-        
-        // Perform the AJAX request to add the event
+    // Correctly attach the click event listener to the "Save Event" button
+    $('#saveEventButton').click(function() {
+        // AJAX request to add an event
         $.ajax({
-            type: "POST",
-            url: "./users/add_events.php",
-            data: eventData,
+            type: 'POST',
+            url: './users/add_events.php',
+            data: $('#addEventForm').serialize(), // Serialize the form data
             success: function(response) {
-                // Assuming the server responds with JSON
-                var data = JSON.parse(response);
-                if (data.success) {
-                    $('#eventModal').modal('hide'); // Close the modal
-                    alert('Event added successfully.');
-                    calendar.refetchEvents(); // Refresh the calendar
-                } else {
-                    alert('Failed to add event: ' + data.message);
+                // Handle success
+                try {
+                    var data = JSON.parse(response);
+                    if(data.success) {
+                        $('#eventModal').modal('hide'); // Close the modal
+                        alert('Event added successfully.');
+                        // Optionally, refresh or update your event calendar view here
+                    } else {
+                        alert('Failed to add event: ' + data.message);
+                    }
+                } catch (e) {
+                    alert('Failed to add event. Please try again.');
                 }
             },
-            error: function(xhr, status, error) {
-                alert('Error: Could not save the event. Please try again.');
+            error: function() {
+                // Handle error
+                alert('There was an error adding the event. Please try again.');
             }
         });
     });
