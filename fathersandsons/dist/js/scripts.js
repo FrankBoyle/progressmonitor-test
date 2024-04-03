@@ -56,30 +56,39 @@ $(document).ready(function() {
      });
      calendar.render();
  
-     // "Add New Event" form submission
-     $('#addEventForm').on('submit', function(e) {
-         e.preventDefault();
-         var eventData = $(this).serialize(); // Serialize form data
-         
-         $.ajax({
-             type: "POST",
-             url: "./users/add_events.php",
-             data: eventData,
-             success: function(response) {
-                 var data = JSON.parse(response);
-                 if(data.success) {
-                     $('#eventModal').modal('hide');
-                     calendar.refetchEvents(); // Refresh calendar events
-                     alert('Event added successfully.');
-                 } else {
-                     alert('Failed to add event: ' + data.message);
-                 }
-             },
-             error: function(xhr, status, error) {
-                 alert('Error: Could not save the event.');
-             }
-         });
-     });
+    // Ensure this is bound correctly and the event is properly prevented.
+    $('#addEventForm').on('submit', function(e) {
+        e.preventDefault(); // Prevent the form from submitting the traditional way
+
+        var eventData = $(this).serialize(); // Serialize the form data
+
+        $.ajax({
+            type: "POST",
+            url: "./users/add_events.php", // Make sure this URL is correct and accessible
+            data: eventData,
+            success: function(response) {
+                try {
+                    var data = JSON.parse(response);
+                    if(data.success) {
+                        $('#eventModal').modal('hide'); // Hide the modal on success
+                        calendar.refetchEvents(); // Refresh the calendar to show the new event
+                        alert('Event added successfully.');
+                    } else {
+                        // If the response indicates failure, alert the user
+                        alert('Failed to add event: ' + data.message);
+                    }
+                } catch (error) {
+                    console.error("Parsing error:", error);
+                    alert('Failed to add event. Please try again.');
+                }
+            },
+            error: function(xhr, status, error) {
+                // Log and alert the error if the AJAX call itself fails
+                console.error("AJAX Error:", status, error);
+                alert('Error: Could not save the event.');
+            }
+        });
+    });
  
      // "Edit Event" save changes button click
      $('#saveEventChanges').click(function() {
