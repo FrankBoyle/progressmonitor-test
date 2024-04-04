@@ -38,7 +38,7 @@ $(document).ready(function() {
              $('#eventModal').modal('show');
              $('#eventStart').val(info.dateStr); // Set the start date based on clicked date
          },
-         
+
         // Inside the eventClick function for editing events
         eventClick: function(info) {
             // Open the modal
@@ -87,18 +87,19 @@ $(document).ready(function() {
                     var data = JSON.parse(response);
                     if(data.success) {
                         $('#eventModal').modal('hide'); // Close the modal
-                        alert('Event added successfully.');
+                        calendar.refetchEvents(); // Refresh calendar events
+                        //alert('Event added successfully.');
                         // Optionally, refresh or update your event calendar view here
                     } else {
-                        alert('Failed to add event: ' + data.message);
+                        //alert('Failed to add event: ' + data.message);
                     }
                 } catch (e) {
-                    alert('Failed to add event. Please try again.');
+                   //alert('Failed to add event. Please try again.');
                 }
             },
             error: function() {
                 // Handle error
-                alert('There was an error adding the event. Please try again.');
+                //alert('There was an error adding the event. Please try again.');
             }
         });
     });
