@@ -10,7 +10,30 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+
+ .fc-event-title {
+  font-size: 1em !important; /* Use important sparingly */
+}
+
+.fc-event-title, .fc-event-time {
+  white-space: normal; /* Override the default nowrap */
+}
+
+ #calendar {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) { /* Adjust to your breakpoint */
+  #calendar {
+      width: 1000px; /* Width for larger screens */
+  }
+}
+
+ :root {
+  --fc-border-color: #ddd;
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: #2c3e50;
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -73,8 +96,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #ee0979;
-  --bs-link-hover-color: #be0761;
+  --bs-link-color: #160664;
+  --bs-link-hover-color: #2607be;
   --bs-code-color: #ee0979;
   --bs-highlight-bg: #fff3cd;
 }
